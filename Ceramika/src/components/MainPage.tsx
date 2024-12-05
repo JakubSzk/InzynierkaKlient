@@ -3,7 +3,7 @@ import { useState } from "react";
 
 function MainPage() {
   const currentDate = new Date();
-  const [month, setMonth] = useState(currentDate.getMonth() as number);
+  const [month, setMonth] = useState(currentDate.getMonth() as number); //from 0
   const [year, setYear] = useState(currentDate.getFullYear() as number);
   const [day, setDay] = useState(currentDate.getDate() as number);
 
@@ -13,7 +13,7 @@ function MainPage() {
 
   const handleChangeMonth = (monthChanged: number, yearChanged: number) => {
     setMonth(monthChanged);
-    setDay(yearChanged);
+    setYear(yearChanged);
   };
 
   return (
