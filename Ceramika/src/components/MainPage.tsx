@@ -1,4 +1,5 @@
 import CalendarPart from "./CalendarPart";
+import DayClicked from "./DayClicked";
 import { useState } from "react";
 
 function MainPage() {
@@ -6,6 +7,7 @@ function MainPage() {
   const [month, setMonth] = useState(currentDate.getMonth() as number); //from 0
   const [year, setYear] = useState(currentDate.getFullYear() as number);
   const [day, setDay] = useState(currentDate.getDate() as number);
+  const [priv, setPriv] = useState(false);
 
   const handleChangeDay = (dayChanged: number) => {
     setDay(dayChanged);
@@ -16,6 +18,10 @@ function MainPage() {
     setYear(yearChanged);
   };
 
+  const handleChangePriv = (privacy: boolean) => {
+    setPriv(privacy);
+  };
+  //console.log(day);
   return (
     <>
       <button
@@ -36,6 +42,14 @@ function MainPage() {
         currDay={day}
         currMonth={month}
         currYear={year}
+        currPriv={priv}
+        onChangePriv={handleChangePriv}
+      />
+      <DayClicked
+        currDay={day}
+        currMonth={month}
+        currYear={year}
+        currPrivate={priv}
       />
     </>
   );
