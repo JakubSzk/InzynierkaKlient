@@ -1,12 +1,13 @@
 interface Props {
-  author: String;
-  type: String;
-  tags: String[];
-  id: Number;
-  price: Number;
-  photos: String[];
-  name: String;
-  avaible: Number;
+  author: string;
+  type: string;
+  tags: string[];
+  id: number;
+  price: number;
+  photos: string[];
+  name: string;
+  avaible: number;
+  onChangeClicked: (clicked: number) => void;
 }
 
 function ItemElement({
@@ -18,6 +19,7 @@ function ItemElement({
   photos,
   name,
   avaible,
+  onChangeClicked,
 }: Props) {
   const data = {
     id: id,
@@ -33,7 +35,7 @@ function ItemElement({
   };
 
   return (
-    <div className="card mb-3">
+    <div className="card mb-3" onClick={() => onChangeClicked(id)}>
       <div className="row g-0">
         <div className="col-md-3">
           <img

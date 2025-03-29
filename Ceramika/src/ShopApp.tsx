@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
 import ItemElement from "./components/ItemElement";
+import DetailsOfItem from "./components/DetailsOfItem";
 
 function ShopApp() {
   type Result = {
-    id: Number;
-    name: String;
-    type: String;
-    model: String;
-    tags: String[];
-    author: String;
-    price: Number;
-    description: String;
-    photos: String[];
-    avaible: Number;
+    id: number;
+    name: string;
+    type: string;
+    model: string;
+    tags: string[];
+    author: string;
+    price: number;
+    description: string;
+    photos: string[];
+    avaible: number;
   };
   const [isLoading, setIsLoading] = useState(false);
   const [authors, setAuthors] = useState([""]);
@@ -24,6 +25,12 @@ function ShopApp() {
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(10000);
   const [data, setData] = useState<Result[]>();
+  const [clicked, setClicked] = useState(-1);
+
+  const handleChangeClicked = (clickedChanged: number) => {
+    setClicked(clickedChanged);
+    console.log(clicked);
+  };
 
   const handleAddTag = () => {
     setTags((prev) => [...prev, ""]);
@@ -52,7 +59,6 @@ function ShopApp() {
       if (!response.ok) throw new Error("Request failed");
 
       setData(await response.json());
-      console.log(data);
     } catch (error) {
       console.error("Error submitting form:", error);
     }
@@ -72,8 +78,6 @@ function ShopApp() {
         setAuthors(await authorsResponse.json());
         setTypes(await typesResponse.json());
         setTagsList(await tagsResponse.json());
-
-        console.log(authors, types, tagsList);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -85,6 +89,8 @@ function ShopApp() {
   }, []);
   return isLoading ? (
     <div>loading</div>
+  ) : clicked >= 0 ? (
+    <DetailsOfItem id={clicked} onChangeClicked={handleChangeClicked} />
   ) : (
     <div className="row">
       <div className="col-2"></div>
@@ -194,6 +200,7 @@ function ShopApp() {
             photos={result.photos}
             name={result.name}
             avaible={result.avaible}
+            onChangeClicked={handleChangeClicked}
           />
         ))}
       </div>
