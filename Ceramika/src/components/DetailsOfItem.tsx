@@ -23,15 +23,14 @@ function DetailsOfItem({ id, onChangeClicked }: Props) {
   const [result, setResult] = useState<Result>();
   const [selected, setSelected] = useState(0);
 
-  const maxWidthButton = {
-    maxWidth: "50px",
+  const background = {
+    backgroundColor: "#edd3b0",
   };
-
-  const maxWidthImg = {
-    maxWidth: "1000px",
+  const backgroundBtn = {
+    backgroundColor: "#855e42",
   };
-  const maxWidthContainer = {
-    maxWidth: "1100px",
+  const backgroundBtn2 = {
+    backgroundColor: "#a67c52",
   };
 
   const handleChangePhotoRight = () => {
@@ -71,18 +70,23 @@ function DetailsOfItem({ id, onChangeClicked }: Props) {
       <div className="row">
         <button
           onClick={() => onChangeClicked(-1)}
-          className="btn m-1 col-1 btn-secondary"
+          className="btn m-1 col-1"
+          style={backgroundBtn2}
         >
           {"<-- Back"}
         </button>
       </div>
       <div className="row">
         <div className="col-2 col-lg-3"></div>
-        <div className="col-8 col-lg-6 justify-content-center">
+        <div
+          className="col-8 col-lg-6 justify-content-center"
+          style={background}
+        >
           <div className="row align-items-stretch">
             <button
               onClick={handleChangePhotoLeft}
-              className="btn rounded-0 rounded-start p-0 col-1 btn-outline-secondary"
+              className="btn rounded-0 rounded-start p-0 col-1 "
+              style={backgroundBtn}
             >
               {"<"}
             </button>
@@ -92,7 +96,8 @@ function DetailsOfItem({ id, onChangeClicked }: Props) {
             ></img>
             <button
               onClick={handleChangePhotoRight}
-              className="btn p-0 rounded-0 rounded-end col-1 btn-outline-secondary"
+              className="btn p-0 rounded-0 rounded-end col-1"
+              style={backgroundBtn}
             >
               {">"}
             </button>
@@ -101,7 +106,9 @@ function DetailsOfItem({ id, onChangeClicked }: Props) {
           <div className="row ">
             <h3 className="col-10">{result?.name}</h3>
 
-            <button className="col-2 btn btn-secondary">3D</button>
+            <button className="col-2 btn" style={backgroundBtn2}>
+              3D
+            </button>
           </div>
           <div className="row">
             <h3 className="col-6">{result?.author}</h3>

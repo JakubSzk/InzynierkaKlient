@@ -24,18 +24,7 @@ function MainPage() {
   //console.log(day);
   return (
     <>
-      <button
-        className="btn btn-danger"
-        onClick={() => {
-          const deleteCookie = (name: string) => {
-            document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/`;
-          };
-
-          deleteCookie("usernameForPapierowyRPG");
-        }}
-      >
-        Log out
-      </button>
+      <br></br>
       <CalendarPart
         onChangeDay={handleChangeDay}
         onChangeMonth={handleChangeMonth}
@@ -45,6 +34,7 @@ function MainPage() {
         currPriv={priv}
         onChangePriv={handleChangePriv}
       />
+      <br></br>
       <DayClicked
         currDay={day}
         currMonth={month}

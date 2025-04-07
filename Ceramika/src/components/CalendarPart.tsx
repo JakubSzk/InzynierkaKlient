@@ -30,17 +30,22 @@ function CalendarPart({
   const cellStyle = {
     maxWidth: "800px",
     minWidth: "700px",
-    backgroundColor: "#ffda6a",
   };
 
   const backgroundYellow300Style = {
-    backgroundColor: "#ffda6a",
+    backgroundColor: "#fff9ed",
   };
   const backgroundGreen200Style = {
-    backgroundColor: "#a3cfbb",
+    backgroundColor: "#cfe9dc",
   };
   const backgroundRed300Style = {
-    backgroundColor: "#ea868f",
+    backgroundColor: "#f4cccc",
+  };
+  const backgroundbutton = {
+    backgroundColor: "#bf8a5a",
+  };
+  const backgroundbutton2 = {
+    backgroundColor: "#a97449 ",
   };
 
   const getMonthLength = () => {
@@ -107,9 +112,12 @@ function CalendarPart({
   if (first === 0) first = 7;
 
   return (
-    <div className="container justify-content-center" style={cellStyle}>
+    <div
+      className="container justify-content-center border rounded-4"
+      style={cellStyle}
+    >
       <div
-        className="row justify-content-center"
+        className="row justify-content-center rounded-4"
         style={backgroundYellow300Style}
       >
         <h2 className="text-center">{`${name} ${currYear}`}</h2>
@@ -164,9 +172,13 @@ function CalendarPart({
         ))
       )}
 
-      <div className="row justify-content-center">
+      <div
+        className="row justify-content-center rounded-4"
+        style={backgroundYellow300Style}
+      >
         <button
-          className="col-1 bg-primary"
+          className="col-1 btn"
+          style={backgroundbutton}
           onClick={() => {
             const newMonth = (currMonth + 11) % 12;
             const newYear = newMonth === 11 ? currYear - 1 : currYear;
@@ -177,7 +189,8 @@ function CalendarPart({
         </button>
 
         <button
-          className="col-3 bg-primary"
+          className="col-3 btn"
+          style={backgroundbutton2}
           onClick={() => {
             onChangePriv(!currPriv);
           }}
@@ -186,7 +199,8 @@ function CalendarPart({
         </button>
 
         <button
-          className="col-1 bg-primary"
+          className="col-1 btn"
+          style={backgroundbutton}
           onClick={() => {
             const newMonth = (currMonth + 1) % 12;
             const newYear = newMonth === 0 ? currYear + 1 : currYear;

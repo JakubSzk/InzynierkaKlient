@@ -9,6 +9,16 @@ function LoginPage({ handleSetLogged }: Props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const backgroundHeader = {
+    backgroundColor: "#7b4f2c",
+  };
+  const backgroundMid = {
+    backgroundColor: "#f9e6d1",
+  };
+  const backgroundBottom = {
+    backgroundColor: "#8b5e3c",
+  };
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setIsChecked(event.target.checked);
   };
@@ -50,32 +60,18 @@ function LoginPage({ handleSetLogged }: Props) {
 
   return (
     <div>
-      <style>
-        {`
-          .form-card {
-            transition: transform 0.6s ease-in-out, border-color 0.6s ease-in-out;
-          }
-
-          .form-card:hover {
-            transform: scale(1.05);
-            border-color: #007bff;
-          }
-      `}
-      </style>
       <div className="container min-vh-100 d-flex justify-content-center align-items-center">
         <div
-          className="card form-card shadow"
+          className="card form-card"
           style={{
             width: "29%",
-            border: "4px solid #ccc",
-            borderRadius: "15px",
           }}
         >
           <form onSubmit={handleSubmit}>
-            <div className="text-center card-header">
-              <h2>Log in</h2>
+            <div className="text-center card-header" style={backgroundHeader}>
+              <h2 className="text-white">Log in</h2>
             </div>
-            <div className="card-body">
+            <div className="card-body" style={backgroundMid}>
               <div className="mb-3">
                 <label htmlFor="inputUsername" className="form-label">
                   Username:
@@ -116,7 +112,7 @@ function LoginPage({ handleSetLogged }: Props) {
                 Submit
               </button>
             </div>
-            <div className="card-footer text-body-secondary">
+            <div className="card-footer text-white" style={backgroundBottom}>
               <p style={{ textAlign: "center" }}>
                 First time? <a href="/signup">Sign up!</a>
               </p>

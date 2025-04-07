@@ -26,11 +26,11 @@ interface CourseModelDTO {
 }
 
 const backgroundYellow300Style = {
-  backgroundColor: "#ffda6a",
+  backgroundColor: "#7b4f2c",
 };
 
 const backgroundYellow200Style = {
-  backgroundColor: "#fff3cd",
+  backgroundColor: "#f9e6d1",
 };
 
 function DayClicked({ currDay, currMonth, currYear, currPrivate }: Props) {
@@ -167,7 +167,7 @@ function DayClicked({ currDay, currMonth, currYear, currPrivate }: Props) {
                     style={{
                       width: `${12.5 * element.lasts}%`,
                       border: "1px solid black",
-                      backgroundColor: "#feb272",
+                      backgroundColor: "#a3d9a5 ",
                     }}
                     onClick={() => setDataId(element.id)}
                   >
@@ -195,7 +195,7 @@ function DayClicked({ currDay, currMonth, currYear, currPrivate }: Props) {
                           element.lasts
                         }%`,
                         border: "1px solid black",
-                        backgroundColor: "#feb272",
+                        backgroundColor: "#a3d9a5  ",
                       }}
                       onClick={() => setDataId(element.id)}
                     >
@@ -208,7 +208,7 @@ function DayClicked({ currDay, currMonth, currYear, currPrivate }: Props) {
                   style={{
                     width: `${12.5 * element.lasts}%`,
                     border: "1px solid black",
-                    backgroundColor: "#feb272",
+                    backgroundColor: "#a3d9a5 ",
                   }}
                   onClick={() => setDataId(element.id)}
                 >
@@ -248,7 +248,7 @@ function DayClicked({ currDay, currMonth, currYear, currPrivate }: Props) {
                         element.lasts
                       }%`,
                       border: "1px solid black",
-                      backgroundColor: "#feb272",
+                      backgroundColor: "#a3d9a5 ",
                     }}
                     onClick={() => setDataId(element.id)}
                   >
@@ -349,6 +349,7 @@ function DayClicked({ currDay, currMonth, currYear, currPrivate }: Props) {
                   <h6 className="card-text">
                     Miejsca zajęte {dataCourse?.taken}/{dataCourse?.seats}
                   </h6>
+                  <h6>{dataCourse?.description}</h6>
                 </div>
               </div>
               <div className="col-md-6">
@@ -358,7 +359,6 @@ function DayClicked({ currDay, currMonth, currYear, currPrivate }: Props) {
                 ></img>
               </div>
             </div>
-            <div className="row g-0">{dataCourse?.description}</div>
           </div>
         )}
       </div>

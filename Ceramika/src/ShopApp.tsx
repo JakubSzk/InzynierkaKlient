@@ -27,6 +27,19 @@ function ShopApp() {
   const [data, setData] = useState<Result[]>();
   const [clicked, setClicked] = useState(-1);
 
+  const backgroundHeader = {
+    backgroundColor: "#7b4f2c",
+  };
+  const backgroundMid = {
+    backgroundColor: "#f9e6d1",
+  };
+  const backgroundBottom = {
+    backgroundColor: "#8b5e3c",
+  };
+  const backgroundButton = {
+    backgroundColor: "#fff8ef",
+  };
+
   const handleChangeClicked = (clickedChanged: number) => {
     setClicked(clickedChanged);
     console.log(clicked);
@@ -97,10 +110,13 @@ function ShopApp() {
 
       <div className="col-8">
         <div className="card">
-          <div className="card-header text-center">
+          <div
+            className="card-header text-center text-white"
+            style={backgroundHeader}
+          >
             <h5 className="card-title">Filters</h5>
           </div>
-          <div className="card-body">
+          <div className="card-body" style={backgroundMid}>
             <form className="row">
               <div className="col">
                 <label htmlFor="inputAuthor">Author:</label>
@@ -183,8 +199,15 @@ function ShopApp() {
               </div>
             </form>
           </div>
-          <div className="card-footer text-center">
-            <button className="btn btn-primary" onClick={handleSubmit}>
+          <div
+            className="card-footer text-center text-white"
+            style={backgroundBottom}
+          >
+            <button
+              className="btn"
+              style={backgroundButton}
+              onClick={handleSubmit}
+            >
               Submit
             </button>
           </div>

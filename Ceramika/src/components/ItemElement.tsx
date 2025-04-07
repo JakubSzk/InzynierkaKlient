@@ -33,9 +33,18 @@ function ItemElement({
     photos: photos,
     avaible: avaible,
   };
-
+  const background = {
+    backgroundColor: "#fff8ef",
+  };
+  const backgroundTag = {
+    backgroundColor: "#f3d59b",
+  };
   return (
-    <div className="card mb-3" onClick={() => onChangeClicked(id)}>
+    <div
+      className="card mb-3"
+      style={background}
+      onClick={() => onChangeClicked(id)}
+    >
       <div className="row g-0">
         <div className="col-md-3">
           <img
@@ -53,14 +62,16 @@ function ItemElement({
         <div className="col-md-3">
           <div className="card-body">
             {Array.from({ length: data.tags.length }, (_, rowIndex) => (
-              <div className="card">{data.tags[rowIndex]}</div>
+              <div className="card" style={backgroundTag}>
+                {data.tags[rowIndex]}
+              </div>
             ))}
           </div>
         </div>
         <div className="col-md-3">
           <div className="card-body">
             <h5>{data.price.toString()}zł</h5>
-            <h6>Dostępne: {data.avaible.toString()}</h6>
+            <h6>Avaible: {data.avaible.toString()}</h6>
           </div>
         </div>
       </div>
