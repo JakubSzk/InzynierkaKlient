@@ -44,7 +44,7 @@ function LoginPage({ handleSetLogged }: Props) {
 
               document.cookie = `${name}=${value}; expires=${expirationDate.toUTCString()}; path=/`;
             };
-            setCookie("usernameForPapierowyRPG", json["username"], 1);
+            setCookie("username", json["name"], 1);
             handleSetLogged(true);
           });
         } else {
