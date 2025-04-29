@@ -9,6 +9,8 @@ const FormAddPhoto = lazy(() => import("./components/FormAddPhoto"));
 const FormDeletePhoto = lazy(() => import("./components/FormDeletePhoto"));
 const FormPhotoItem = lazy(() => import("./components/FormPhotoItem"));
 const FormAddItem = lazy(() => import("./components/FormAddItem"));
+const FormAddCourse = lazy(() => import("./components/FormAddCourse"));
+const FormDeleteCourse = lazy(() => import("./components/FormDeleteCourse"));
 
 function AdminApp() {
   const [selected, setSelected] = useState(0);
@@ -22,6 +24,8 @@ function AdminApp() {
     5: "Usuń zdjęcie",
     6: "Dodaj zdjęcie do przedmiotu",
     7: "Dodaj przedmiot",
+    8: "Dodaj kurs",
+    9: "Usuń kurs",
   };
 
   const modules: Record<number, React.LazyExoticComponent<any>> = {
@@ -32,6 +36,8 @@ function AdminApp() {
     5: FormDeletePhoto,
     6: FormPhotoItem,
     7: FormAddItem,
+    8: FormAddCourse,
+    9: FormDeleteCourse,
   };
   const SelectedModule = modules[selected] ?? FormAddTag;
   return (
@@ -82,6 +88,18 @@ function AdminApp() {
                 onClick={() => setSelected(7)}
               >
                 Dodaj przedmiot
+              </button>
+              <button
+                className="btn btn-outline-secondary mb-2"
+                onClick={() => setSelected(8)}
+              >
+                Dodaj kurs
+              </button>
+              <button
+                className="btn btn-outline-secondary mb-2"
+                onClick={() => setSelected(9)}
+              >
+                Usuń kurs
               </button>
             </div>
           ) : (
