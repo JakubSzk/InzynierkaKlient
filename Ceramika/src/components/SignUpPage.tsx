@@ -64,12 +64,12 @@ function SignUpPage({ handleAlert }: Props) {
               className="text-center card-header text-white"
               style={backgroundHeader}
             >
-              <h2>Sign up</h2>
+              <h2>Rejestracja</h2>
             </div>
             <div className="card-body" style={backgroundMid}>
               <div className="mb-3">
                 <label htmlFor="inputUsername" className="form-label">
-                  Username
+                  Nazwa użytkownika
                 </label>
                 <input
                   type="text"
@@ -95,7 +95,7 @@ function SignUpPage({ handleAlert }: Props) {
 
               <div className="mb-3">
                 <label htmlFor="exampleInputPassword1" className="form-label">
-                  Password
+                  Hasło
                 </label>
                 <input
                   type={isChecked ? "text" : "password"}
@@ -115,16 +115,16 @@ function SignUpPage({ handleAlert }: Props) {
                   onChange={handleChange}
                 />
                 <label className="form-check-label" htmlFor="showPassword">
-                  Show password
+                  Pokaż hasło
                 </label>
               </div>
               <button type="submit" className="btn btn-primary">
-                Submit
+                Wyślij
               </button>
             </div>
             <div className="card-footer text-white" style={backgroundBottom}>
               <p style={{ textAlign: "center" }}>
-                You have an account? <a href="/index">Sign in!</a>
+                Masz już konto? <a href="/index">Zaloguj się!</a>
               </p>
             </div>
           </form>

@@ -69,12 +69,12 @@ function LoginPage({ handleSetLogged }: Props) {
         >
           <form onSubmit={handleSubmit}>
             <div className="text-center card-header" style={backgroundHeader}>
-              <h2 className="text-white">Log in</h2>
+              <h2 className="text-white">Zaloguj się</h2>
             </div>
             <div className="card-body" style={backgroundMid}>
               <div className="mb-3">
                 <label htmlFor="inputUsername" className="form-label">
-                  Username:
+                  Nazwa użytkownika:
                 </label>
                 <input
                   type="text"
@@ -86,7 +86,7 @@ function LoginPage({ handleSetLogged }: Props) {
               </div>
               <div className="mb-3">
                 <label htmlFor="exampleInputPassword1" className="form-label">
-                  Password:
+                  Hasło:
                 </label>
                 <input
                   type={isChecked ? "text" : "password"}
@@ -105,16 +105,16 @@ function LoginPage({ handleSetLogged }: Props) {
                   onChange={handleChange}
                 />
                 <label className="form-check-label" htmlFor="showPassword">
-                  Show password
+                  Pokaż hasło
                 </label>
               </div>
               <button type="submit" className="btn btn-primary">
-                Submit
+                Wyślij
               </button>
             </div>
             <div className="card-footer text-white" style={backgroundBottom}>
               <p style={{ textAlign: "center" }}>
-                First time? <a href="/signup">Sign up!</a>
+                Pierwszy raz? <a href="/signup">Zarejestruj się!</a>
               </p>
             </div>
           </form>

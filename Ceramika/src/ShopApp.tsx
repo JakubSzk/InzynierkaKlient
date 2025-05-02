@@ -114,18 +114,18 @@ function ShopApp() {
             className="card-header text-center text-white"
             style={backgroundHeader}
           >
-            <h5 className="card-title">Filters</h5>
+            <h5 className="card-title">Filtry</h5>
           </div>
           <div className="card-body" style={backgroundMid}>
             <form className="row">
               <div className="col">
-                <label htmlFor="inputAuthor">Author:</label>
+                <label htmlFor="inputAuthor">Autor:</label>
                 <select
                   className="form-select mb-2"
                   onChange={(e) => setAuthor(e.target.value)}
                   id="inputAuthor"
                 >
-                  <option value="">Author</option>
+                  <option value="">Autor</option>
                   {authors.map((author, index) => (
                     <option key={index} value={author}>
                       {author}
@@ -134,12 +134,12 @@ function ShopApp() {
                 </select>
               </div>
               <div className="col">
-                <label htmlFor="inputType">Type:</label>
+                <label htmlFor="inputType">Rodzaj:</label>
                 <select
                   onChange={(e) => setType(e.target.value)}
                   id="inputType"
                 >
-                  <option value="">Type</option>
+                  <option value="">Rodzaj</option>
                   {types.map((type, index) => (
                     <option key={index} value={type}>
                       {type}
@@ -148,7 +148,7 @@ function ShopApp() {
                 </select>
               </div>
               <div className="col">
-                <h5>Price</h5>
+                <h5>Cena</h5>
                 <div className="row">
                   <div className="col">
                     <label htmlFor="inputMin">Min:</label>
@@ -170,7 +170,7 @@ function ShopApp() {
                 </div>
               </div>
               <div className="col">
-                <h6>Tags:</h6>
+                <h6>Tagi:</h6>
                 {tags.map((tag, index) => (
                   <select
                     key={index}
@@ -179,7 +179,7 @@ function ShopApp() {
                     className="form-select mb-2"
                   >
                     <option value="" disabled>
-                      Select tag
+                      Wybierz tag
                     </option>
                     {tagsList.map((tag) => (
                       <option key={tag} value={tag}>
@@ -208,24 +208,28 @@ function ShopApp() {
               style={backgroundButton}
               onClick={handleSubmit}
             >
-              Submit
+              Filtruj
             </button>
           </div>
         </div>
         <br></br>
-        {data?.map((result) => (
-          <ItemElement
-            author={result.author}
-            type={result.type}
-            tags={result.tags}
-            id={result.id}
-            price={result.price}
-            photos={result.photos}
-            name={result.name}
-            avaible={result.avaible}
-            onChangeClicked={handleChangeClicked}
-          />
-        ))}
+        {data?.length == 0 ? (
+          <div>Brak wyników o podanych kryteriach.</div>
+        ) : (
+          data?.map((result) => (
+            <ItemElement
+              author={result.author}
+              type={result.type}
+              tags={result.tags}
+              id={result.id}
+              price={result.price}
+              photos={result.photos}
+              name={result.name}
+              avaible={result.avaible}
+              onChangeClicked={handleChangeClicked}
+            />
+          ))
+        )}
       </div>
       <div className="col-2"></div>
     </div>

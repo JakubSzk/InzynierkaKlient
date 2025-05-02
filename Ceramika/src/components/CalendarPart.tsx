@@ -122,6 +122,16 @@ function CalendarPart({
       >
         <h2 className="text-center">{`${name} ${currYear}`}</h2>
       </div>
+      <div
+        className="row justify-content-center rounded-4"
+        style={backgroundYellow300Style}
+      >
+        <h6 className="text-center">
+          {currPriv
+            ? "Rejestracja na kursy prywatne"
+            : "Rejestracja na kursy publiczne"}
+        </h6>
+      </div>
 
       {isLoading ? (
         <div className="text-center" style={cellStyle}>
@@ -135,7 +145,10 @@ function CalendarPart({
               return day > 0 && day <= length ? (
                 <div
                   key={colIndex}
-                  className="col card"
+                  className={
+                    "col card " +
+                    (day == currDay ? "border-2 border-secondary" : "")
+                  }
                   style={
                     ((currPriv && 8 - (dataSet[day - 1]?.count ?? 0) > 0) ||
                       (!currPriv && dataSet[day - 1]?.count)) ??
@@ -154,7 +167,7 @@ function CalendarPart({
                   <h5 className="card-title">{day}</h5>
                   <div style={{ paddingBottom: "5%" }}></div>
                   <h6>
-                    {currPriv ? "Wolne godziny" : "Kursy Cykliczne"}{" "}
+                    {currPriv ? "Wolne godziny:" : "Kursy Publiczne:"}{" "}
                     {currPriv
                       ? 8 - (dataSet[day - 1]?.count ?? 0)
                       : dataSet[day - 1]?.count ?? 0}

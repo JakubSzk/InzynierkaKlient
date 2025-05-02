@@ -8,7 +8,7 @@ function SignApp() {
   return alertVisible ? (
     <>
       <Alert
-        text="Account created."
+        text="Konto utworzone."
         type="success"
         onClose={() => setAlertVisible(false)}
       />

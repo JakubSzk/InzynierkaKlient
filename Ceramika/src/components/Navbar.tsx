@@ -7,7 +7,10 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg " style={backgroundBrown}>
       <div className="container-fluid" style={backgroundBrown}>
         <a className="navbar-brand" href="#">
-          Ceramic
+          <img
+            width="40"
+            src="src/components/easter-island-svgrepo-com.svg"
+          ></img>
         </a>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -17,12 +20,12 @@ const Navbar = () => {
                 aria-current="page"
                 href="http://localhost:5173/index"
               >
-                Course
+                Kursy
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="http://localhost:5173/shop">
-                Shop
+                Sklep
               </a>
             </li>
           </ul>
@@ -38,7 +41,7 @@ const Navbar = () => {
               className="btn btn-danger"
               type="submit"
             >
-              Log Out
+              Wyloguj
             </button>
           </form>
         </div>

@@ -157,7 +157,7 @@ function DayClicked({ currDay, currMonth, currYear, currPrivate }: Props) {
       <div className="col-2"></div>
       <div className="col-8" style={backgroundYellow300Style}>
         {isLoading ? (
-          <div>loading data</div>
+          <div>ładowanie danych</div>
         ) : (
           <div className="row" style={{ minHeight: "50px" }}>
             {dataSet.map((element, i) =>
@@ -167,7 +167,8 @@ function DayClicked({ currDay, currMonth, currYear, currPrivate }: Props) {
                     style={{
                       width: `${12.5 * element.lasts}%`,
                       border: "1px solid black",
-                      backgroundColor: "#a3d9a5 ",
+                      backgroundColor:
+                        dataId == element.id ? "#7fb97f" : "#a3d9a5 ",
                     }}
                     onClick={() => setDataId(element.id)}
                   >
@@ -195,7 +196,8 @@ function DayClicked({ currDay, currMonth, currYear, currPrivate }: Props) {
                           element.lasts
                         }%`,
                         border: "1px solid black",
-                        backgroundColor: "#a3d9a5  ",
+                        backgroundColor:
+                          dataId == element.id ? "#7fb97f" : "#a3d9a5 ",
                       }}
                       onClick={() => setDataId(element.id)}
                     >
@@ -208,7 +210,8 @@ function DayClicked({ currDay, currMonth, currYear, currPrivate }: Props) {
                   style={{
                     width: `${12.5 * element.lasts}%`,
                     border: "1px solid black",
-                    backgroundColor: "#a3d9a5 ",
+                    backgroundColor:
+                      dataId == element.id ? "#7fb97f" : "#a3d9a5 ",
                   }}
                   onClick={() => setDataId(element.id)}
                 >
@@ -248,7 +251,8 @@ function DayClicked({ currDay, currMonth, currYear, currPrivate }: Props) {
                         element.lasts
                       }%`,
                       border: "1px solid black",
-                      backgroundColor: "#a3d9a5 ",
+                      backgroundColor:
+                        dataId == element.id ? "#7fb97f" : "#a3d9a5 ",
                     }}
                     onClick={() => setDataId(element.id)}
                   >

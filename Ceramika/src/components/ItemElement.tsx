@@ -70,8 +70,8 @@ function ItemElement({
         </div>
         <div className="col-md-3">
           <div className="card-body">
-            <h5>{data.price.toString()}zł</h5>
-            <h6>Avaible: {data.avaible.toString()}</h6>
+            <h5>{data.price.toString()} zł</h5>
+            <h6>Dostępne: {data.avaible.toString()}</h6>
           </div>
         </div>
       </div>

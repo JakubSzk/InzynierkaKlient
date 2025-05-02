@@ -39,7 +39,7 @@ function DetailsOfItem({ id, onChangeClicked }: Props) {
   };
 
   const handleChangePhotoLeft = () => {
-    if (selected - 1 == 0 && result != null)
+    if (selected - 1 != 0 && result != null)
       setSelected(result?.photos.length - 1);
     else setSelected(selected - 1);
   };
@@ -64,7 +64,7 @@ function DetailsOfItem({ id, onChangeClicked }: Props) {
   }, []);
 
   return loading ? (
-    <div>loading</div>
+    <div>ładowanie</div>
   ) : (
     <div>
       <div className="row">
@@ -112,11 +112,11 @@ function DetailsOfItem({ id, onChangeClicked }: Props) {
           </div>
           <div className="row">
             <h3 className="col-6">{result?.author}</h3>
-            <h3 className="col-6 text-end">{result?.price + "zł"}</h3>
+            <h3 className="col-6 text-end">{result?.price + " zł"}</h3>
           </div>
           <div className="row">
             <h3 className="col-6">{result?.type}</h3>
-            <h3 className="col-6 text-end">Pozostało {result?.avaible}szt</h3>
+            <h3 className="col-6 text-end">Pozostało {result?.avaible} szt</h3>
           </div>
           <div className="row">
             <h4 className="border rounded">{result?.description}</h4>

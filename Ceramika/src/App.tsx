@@ -13,7 +13,7 @@ const getCookie = (name: string) => {
 
 function App() {
   const username = getCookie("username");
-  console.log("aa", username);
+  //console.log("aa", username);
   const [logged, setLogged] = useState(username != null);
   const [alertVisible, setAlertVisible] = useState(false);
 
@@ -27,7 +27,7 @@ function App() {
     return alertVisible ? (
       <>
         <Alert
-          text="Succesfully logged."
+          text="Pomyślnie zalogowano."
           type="success"
           onClose={() => setAlertVisible(false)}
         />
@@ -40,7 +40,7 @@ function App() {
     return alertVisible ? (
       <>
         <Alert
-          text="Wrong credentials!"
+          text="Błędne dane!"
           type="danger"
           onClose={() => setAlertVisible(false)}
         />
