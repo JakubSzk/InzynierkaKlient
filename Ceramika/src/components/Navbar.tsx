@@ -28,6 +28,11 @@ const Navbar = () => {
                 Sklep
               </a>
             </li>
+            <li className="nav-item">
+              <a className="nav-link" href="http://localhost:5173/list">
+                Zarejestrowane
+              </a>
+            </li>
           </ul>
           <form className="d-flex">
             <button
