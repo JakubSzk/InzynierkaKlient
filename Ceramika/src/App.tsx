@@ -22,7 +22,6 @@ function App() {
     setAlertVisible(true);
   };
 
-  //check for session cookie and if we find it set propper account and logged to true
   if (logged) {
     return alertVisible ? (
       <>
