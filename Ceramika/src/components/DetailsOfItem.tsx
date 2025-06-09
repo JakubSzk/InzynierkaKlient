@@ -8,7 +8,7 @@ type ModelProps = {
 
 function Model({ name }: ModelProps) {
   const { scene } = useGLTF("src/3dfiles/" + name);
-  return <primitive object={scene} scale={0.01} />;
+  return <primitive object={scene} dispose={null} scale={1} />;
 }
 
 interface Props {
@@ -59,9 +59,8 @@ function DetailsOfItem({ id, onChangeClicked }: Props) {
   };
 
   const handleChangePhotoLeft = () => {
-    if (selected - 1 != 0 && result != null)
-      setSelected(result?.photos.length - 1);
-    else setSelected(selected - 1);
+    if (selected - 1 >= 0 && result != null) setSelected(selected - 1);
+    else setSelected((result?.photos.length ?? 1) - 1);
   };
 
   useEffect(() => {
@@ -73,8 +72,6 @@ function DetailsOfItem({ id, onChangeClicked }: Props) {
         );
         if (!response.ok) throw new Error("Request failed");
         setResult(await response.json());
-        console.log(result);
-        console.log(response);
       } catch (error) {
         console.error("Error fetching data: ", error);
       }
@@ -102,9 +99,11 @@ function DetailsOfItem({ id, onChangeClicked }: Props) {
         style={{ position: "absolute" }}
       >
         <color attach="background" args={["#101010"]} />
+        <ambientLight intensity={0.5} />
+        <directionalLight position={[5, 5, 5]} intensity={1} castShadow />
         <PresentationControls speed={1.5} global zoom={0.5}>
           <Stage environment={null}>
-            <Model name="bmw.glb" />
+            <Model name={result?.model ?? ""} />
           </Stage>
         </PresentationControls>
       </Canvas>

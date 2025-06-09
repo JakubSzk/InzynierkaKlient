@@ -1,6 +1,4 @@
 import { lazy, Suspense, useState } from "react";
-//import FormDeleteTag from "./components/FormDeleteTag";
-//import FormAddTag from "./components/FormAddTag";
 
 const FormAddTag = lazy(() => import("./components/FormAddTag"));
 const FormDeleteTag = lazy(() => import("./components/FormDeleteTag"));
