@@ -13,7 +13,6 @@ const getCookie = (name: string) => {
 
 function App() {
   const username = getCookie("username");
-  //console.log("aa", username);
   const [logged, setLogged] = useState(username != null);
   const [alertVisible, setAlertVisible] = useState(false);
 

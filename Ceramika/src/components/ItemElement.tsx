@@ -39,6 +39,9 @@ function ItemElement({
   const backgroundTag = {
     backgroundColor: "#f3d59b",
   };
+  const maxHeight9 = {
+    height: "180px",
+  };
   return (
     <div
       className="card mb-3"
@@ -48,6 +51,7 @@ function ItemElement({
       <div className="row g-0">
         <div className="col-md-3">
           <img
+            style={maxHeight9}
             src={"src/photos/" + data.photos[0]}
             className="img-fluid rounded-start"
           ></img>

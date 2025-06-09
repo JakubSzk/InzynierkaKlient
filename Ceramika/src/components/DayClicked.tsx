@@ -183,8 +183,6 @@ function DayClicked({ currDay, currMonth, currYear, currPrivate }: Props) {
               hour: json[i],
               lasts: 1,
             }));
-            console.log(newDataSet);
-            //console.log(length);
             setDataSet(newDataSet);
           } catch (error) {
             console.error("Błąd połączenia z API:", error);
@@ -215,7 +213,6 @@ function DayClicked({ currDay, currMonth, currYear, currPrivate }: Props) {
               hour: json[i]?.hour || 0,
               lasts: json[i]?.lasts || 0,
             }));
-            console.log(newDataSet);
 
             setDataSet(newDataSet);
           } catch (error) {
